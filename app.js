@@ -221,7 +221,7 @@ function renderScores(boats, ranked, arer, shoubu, rtype, warn, w){
     const blur = (!pro && idx>=2) ? 'style="filter:blur(4px); opacity:.65"' : "";
     return `
       <div class="scoreRow" ${blur}>
-        <div class="scoreRank">${idx+1}</div>
+        <div class="scoreRank">#${idx+1}</div>
         <div class="scoreMain">
           <div class="scoreName"><span class="laneBadge">${x.boat.lane}</span> ${x.boat.name}</div>
           <div class="scoreBar"><div class="scoreFill" style="width:${pct.toFixed(1)}%"></div></div>
@@ -235,8 +235,9 @@ function renderScores(boats, ranked, arer, shoubu, rtype, warn, w){
 
   // 結論ダッシュボード
   const dash = `
+    <div class="kpi wide"><div class="t">会場</div><div class="v">${state.venue} / ${state.race}R</div></div>
     <div class="kpi"><div class="t">レースタイプ</div><div class="v">${rtype}</div></div>
-    <div class="kpi"><div class="t">荒れ度</div><div class="v">${arerLabel(arer)} <span class="small">(${arer.toFixed(0)})</span></div></div>
+    <div class="kpi"><div class="t">荒れ度</div><div class="v">${arerLabel(arer)}</div></div>
     <div class="kpi"><div class="t">勝負度</div><div class="v">${shoubu.toFixed(0)}</div></div>
     <div class="kpi"><div class="t">注意</div><div class="v">${warn}</div></div>
   `;

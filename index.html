@@ -1,82 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GOLDEN INDEX 完全版（ローカル版→Pages）</title>
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>GOLDEN INDEX 完全版（ローカル版→Pages）</title>
+<link href="./styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="top">
-    <div class="brand">
-      <div class="logo">G</div>
-      <div>
-        <h1>GOLDEN INDEX <span class="sub">完全版（番組＋2年成績→指数）</span></h1>
-        <div id="meta" class="meta">loading…</div>
-      </div>
-    </div>
-    <div class="controls">
-      <label>日付
+<header class="top">
+<div class="brand">
+<div class="logo">G</div>
+<div>
+<h1>GOLDEN INDEX <span class="sub">完全版（番組＋2年成績→指数）</span></h1>
+<div class="meta" id="meta">loading…</div><div class="held-venues" id="heldVenues"></div><div class="venue-info" id="venueInfo"></div>
+</div>
+</div>
+<div class="controls">
+<label>日付
         <select id="dateSel"></select>
-      </label>
-      <label>場
+</label>
+<label>場
         <select id="venueSel"></select>
-      </label>
-      <label>R
+</label>
+<label>R
         <select id="raceSel"></select>
-      </label>
-      <label>開催日数
+</label>
+<label>開催日数
         <select id="daySel">
-          <option value="1">1日目</option><option value="2">2日目</option><option value="3">3日目</option>
-          <option value="4">4日目</option><option value="5">5日目</option><option value="6">6日目</option>
-        </select>
-      </label>
-      <label>予算(円)
-        <input id="budget" type="number" value="5000" min="0" step="100" />
-      </label>
-      <label class="proToggle">
-        <input id="pro" type="checkbox" />
+<option value="1">1日目</option><option value="2">2日目</option><option value="3">3日目</option>
+<option value="4">4日目</option><option value="5">5日目</option><option value="6">6日目</option>
+</select>
+</label>
+<label>予算(円)
+        <input id="budget" min="0" step="100" type="number" value="5000"/>
+</label>
+<label class="proToggle">
+<input id="pro" type="checkbox"/>
         Pro表示
       </label>
-      <button id="recalc" class="btn">再計算</button>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="card">
-      <h2>展示入力 <span class="hint">（行/伸/回：0〜10、タイム：秒）</span></h2>
-      <div id="expoTable"></div>
-      <div class="note">
+<button class="btn" id="recalc">再計算</button>
+</div>
+</header>
+<main class="wrap">
+<section class="card">
+<h2>展示入力 <span class="hint">（行/伸/回：0〜10、タイム：秒）</span></h2>
+<div id="expoTable"></div>
+<div class="note">
         展示は「あなたの目で評価＝あなたの予想になる」。展示入力により指数が変動します（参考情報）。
       </div>
-    </section>
-
-    <section class="grid">
-      <section class="card">
-        <h2>結論ダッシュボード</h2>
-        <div id="dashboard" class="dash"></div>
-      </section>
-
-      <section class="card">
-        <h2>ランキング</h2>
-        <div id="scoreTable"></div>
-      </section>
-    </section>
-
-    <section class="card">
-      <h2>買い目（本命6点）</h2>
-      <div id="tickets"></div>
-      <div id="allocation" class="alloc"></div>
-      <button id="copy" class="btn ghost">共有文コピー</button>
-      <textarea id="shareText" class="hidden"></textarea>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div>© GOLDEN INDEX / ローカル版→Pages</div>
-    <div class="small">欠損は平均補完＋不確実性補正。指数は参考情報であり結果を保証しません。</div>
-  </footer>
-
+</section>
+<section class="grid">
+<section class="card">
+<h2>結論ダッシュボード</h2>
+<div class="dash" id="dashboard"></div>
+</section>
+<section class="card">
+<h2>ランキング</h2>
+<div id="scoreTable"></div>
+</section>
+</section>
+<section class="card">
+<h2>買い目（本命6点）</h2>
+<div id="tickets"></div>
+<div class="alloc" id="allocation"></div>
+<button class="btn ghost" id="copy">共有文コピー</button>
+<textarea class="hidden" id="shareText"></textarea>
+</section>
+</main>
+<footer class="foot">
+<div>© GOLDEN INDEX / ローカル版→Pages</div>
+<div class="small">欠損は平均補完＋不確実性補正。指数は参考情報であり結果を保証しません。</div>
+</footer>
 <script src="./app.js"></script>
 </body>
 </html>
